@@ -1,19 +1,27 @@
-const elementoChute = document.getElementById('chute')
+var elementoChute = document.getElementById('chute')
+var microfone = document.getElementById('microfone')
 
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition
+microfone.addEventListener('click', e => {
+    window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition
 
-const recognition = new SpeechRecognition();
-recognition.lang = 'pt-Br';
-recognition.start();
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'pt-Br';
+    recognition.start();
 
-recognition.addEventListener('result', onSpeach)
+    recognition.addEventListener('result', onSpeach)
 
-function onSpeach(e) {
+    function onSpeach(e) {
+        chute = e.results[0][0].transcript  
+        exibeChuteNaTela(chute)
+        verificacaoDeChute(chute)
+    }
+
     
-    chute = e.results[0][0].transcript
-    exibeChuteNaTela(chute)
-    verificacaoDeChute(chute)
-}
+
+
+
+    recognition.addEventListener('end', () => recognition.start())
+})
 
 function exibeChuteNaTela(chute) {
     elementoChute.innerHTML = `
@@ -21,5 +29,3 @@ function exibeChuteNaTela(chute) {
         <span class="box">${chute}</span>
     `
 }
-
-recognition.addEventListener('end', () => recognition.start())

@@ -10,17 +10,32 @@
     <title>Número secreto</title>
 </head>
 <body>
-    <h1>Acerte o número secreto</h1>
-
-    <h3>O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
-
-    <div id="chute" class="mensagem">
-        <!-- <div>Você disse:</div>
-        <span class="box">20</span>
-        <div>O número secreto é maior <i class="fa-solid fa-arrow-up"></i></div> -->
+    <section class="apresentacao">
+        <h1>Acerte o número secreto</h1>
+        <h3 id="margem">O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
+    </section>  
+    <section class="escolha-usuario">
+        <h3 id="escolha">Como você deseja fazer o chute?</h3>
+        <h4>Por voz:</h4>
+        <h4>Digitado:</h4>
+    </section>
+    <div class="icones">
+        <span id="microfone">🎤</span>
+        <span id="teclado">⌨</span>
     </div>
+    <div class="campo-digitado">
+        <input type="text" id="chute-digitado" placeholder="500">
+        <button id="botao"><i class="fa-solid fa-arrow-right"></i></i></button>
+    </div>
+    <div id="chute" class="mensagem">
+            <!-- <div>Você disse:</div>
+            <span class="box">20</span>
+            <div>O número secreto é maior <i class="fa-solid fa-arrow-up"></i></div> -->
+    </div>
+    
     <script src="app/sortearNumero.js"></script>
     <script src="app/reconhecimentoDeVoz.js"></script>
     <script src="app/validação.js"></script>
+    <script src="app/validaçãodig.js"></script>
 </body>
 </html>
