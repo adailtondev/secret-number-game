@@ -7,7 +7,7 @@ function verificacaoDeChute(chute) {
         document.body.innerHTML = `
             <div class="game-over">
                 <h2>GAME OVER</h2>
-                <h3>Você ultrapassou de 10 tentativas. <br>Pressione o botão se deseja jogar novamente com outro número secreto!</h3>
+                <h3>Você ultrapassou de 10 tentativas, o número secreto era: ${numeroSecreto}.<br><br><br>Pressione o botão se deseja jogar novamente com outro número secreto!</h3>
                 <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
             </div>    
         `
