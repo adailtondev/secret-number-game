@@ -118,11 +118,13 @@ h4 {
 #microfone {
     margin-top: 2em;
     cursor: pointer;
+    font-size:1.5em;
 }
 
 #teclado {
     margin-top: 2em;
     cursor: pointer;
+    font-size:1.5em;
 }
 .icones {
     grid-column: span 2;

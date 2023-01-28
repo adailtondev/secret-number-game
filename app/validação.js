@@ -1,4 +1,7 @@
+var tentativa = 0
+
 function verificacaoDeChute(chute) {
+    tentativa++
     let elementoChute = document.getElementById('chute')
     if (chute === 'game over') {
         document.body.innerHTML = `
@@ -25,7 +28,7 @@ function verificacaoDeChute(chute) {
     if (numero === numeroSecreto) {
         document.body.innerHTML = `
             <h2>Parabéns, você acertou!</h2>
-            <h3>O número secreto era ${numeroSecreto}.<br><br><br>
+            <h3>O número secreto era ${numeroSecreto}. Você precisou de ${tentativa} tentativas!<br><br><br>
             <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button> 
         `
     } else if (numero > numeroSecreto) {
