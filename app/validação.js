@@ -3,7 +3,7 @@ var tentativa = 0
 function verificacaoDeChute(chute) {
     tentativa++
     let elementoChute = document.getElementById('chute')
-    if (tentativa > 10) {
+    if (tentativa > 9) {
         document.body.innerHTML = `
             <div class="game-over">
                 <h2>GAME OVER</h2>
